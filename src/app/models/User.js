@@ -26,7 +26,14 @@ class User extends Model {
     });
 
     /** Retorna o model que foi salvo */
+    
     return this;
+  }
+
+  /** Check password */
+
+  checkPassword(password){
+    return bcrypt.compare(password, this.password_hash);
   }
 }
 
